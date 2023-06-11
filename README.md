@@ -41,4 +41,7 @@ So to install this library, perform the following steps:
 7. Now copy the file glad.c inside the src folder to your current working directory.
 
 ## Run the program
-`g++ triangle.cpp glad.c -ldl -lglfw && ./a.out`
+```mkdir build_graphicProgramming
+cd build_graphicProgramming
+cmake ..
+cmake --build .```
