@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -73,7 +74,7 @@ void AddShader( GLuint theProgram, const char* shaderCode, GLenum shaderType )
     glGetShaderiv(theShader, GL_COMPILE_STATUS, &result);
     if (result == 0)
     {
-    	glGetShaderInfoLog(theShader, sizeof(eLog), NULL, eLog);
+        glGetShaderInfoLog(theShader, sizeof(eLog), nullptr, eLog);
     	printf("Error compiling the %d shader: '%s'\n", shaderType, eLog);
     	return;
     }
@@ -101,7 +102,7 @@ void CompileShaders()
     glGetProgramiv(shader, GL_LINK_STATUS, &result);
     if (result == 0)
     {
-    	glGetProgramInfoLog(shader, sizeof(eLog), NULL, eLog);
+        glGetProgramInfoLog(shader, sizeof(eLog), nullptr, eLog);
     	printf("Error linking program: '%s'\n", eLog);
     	return;
     }
@@ -110,7 +111,7 @@ void CompileShaders()
     glGetProgramiv(shader, GL_VALIDATE_STATUS, &result);
     if (result == 0)
     {
-    	glGetProgramInfoLog(shader, sizeof(eLog), NULL, eLog);
+        glGetProgramInfoLog(shader, sizeof(eLog), nullptr, eLog);
     	printf("Error validating program: '%s'\n", eLog);
     	return;
     }
@@ -136,7 +137,7 @@ int main()
 	// Allow forward compatibility
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-	GLFWwindow *mainWindow = glfwCreateWindow(WIDTH, HEIGHT, "Main Window", NULL, NULL);
+    GLFWwindow *mainWindow = glfwCreateWindow(WIDTH, HEIGHT, "Main Window", nullptr, nullptr);
 
 	if (!mainWindow)
 	{
