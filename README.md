@@ -34,11 +34,10 @@ So to install this library, perform the following steps:
 
 1. Head on to the GLAD [web service](https://glad.dav1d.de/).
 2. Set the language to C++ and choose the specification as OpenGL.
-3. In the API section, select gl version of at least 3.3, make sure the profile is set to Core, and that the Generate a loader option is ticked.
+3. In the API section, select gl 3.3 version, make sure the profile is set to Core, and that the Generate a loader option is ticked.
 4. Ignore the extensions and click Generate to produce the resulting library files.
 5. GLAD, by now, should have provided you a zip file: glad.zip containing two folders(include and src).
 6. Copy the folders inside include (glad and KHR) into your include(s) directory: cp -R include/* /usr/include/
-7. Now copy the file glad.c inside the src folder to your current working directory.
 
 ## Run the program
 ```mkdir build_graphicProgramming
