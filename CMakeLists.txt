@@ -3,7 +3,6 @@ project(GraphicProgramming LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 ###
 ### Initialization
@@ -16,6 +15,9 @@ file(GLOB_RECURSE PROJ_SRC src/*.h src/*.cpp)
 
 add_subdirectory(externalLib/glad)
 
+set(glm_DIR externalLib/GLM/cmake/glm)
+find_package(glm REQUIRED)
+
 ###
 ### Generating the project files
 ###
@@ -24,4 +26,4 @@ add_executable(${PROJECT_NAME} ${PROJ_SRC} )
 ###
 ### Linking to the project
 ###
-target_link_libraries(${PROJECT_NAME} glfw glad)
+target_link_libraries(${PROJECT_NAME} glfw glad glm::glm)
